@@ -140,20 +140,22 @@ The discriminator forces the generator to produce more realistic outputs over ti
 This project trains a GAN for face inpainting using **Binary Cross-Entropy (BCE)** adversarial losses.
 
 ### Notation
-- \(x\): masked input image  
-- \(y\): real (ground-truth) image  
-- \(G(\cdot)\): Generator  
-- \(D(\cdot)\): Discriminator output in \([0,1]\) (probability of being real)  
-- \(\mathbb{E}[\cdot]\): expectation over the data distribution
+- `x` : masked input image
+- `y` : real (ground-truth) image
+- `G(·)` : Generator
+- `D(·)` : Discriminator output in `[0, 1]` (probability of being real)
+- `E[·]` : expectation over the data distribution
+
 
 ---
 
 ### Binary Cross-Entropy (BCE)
 
-\[
-\mathrm{BCE}(t, p) = -\Big(t \log(p) + (1-t)\log(1-p)\Big)
-\]
+**Formula (plain text):**
 
-where:
-- \(t \in \{0,1\}\) is the target label
-- \(p \in (0,1)\) is the predicted probability
+BCE(t, p) = - [ t * log(p) + (1 - t) * log(1 - p) ]
+
+**Where:**
+- `t` in `{0, 1}` is the target label
+- `p` in `(0, 1)` is the predicted probability
+
